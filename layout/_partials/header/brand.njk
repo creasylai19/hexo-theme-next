@@ -16,15 +16,15 @@
 
     <a href="{{ config.root }}" class="brand" rel="start">
       <i class="logo-line"></i>
-      <h1 class="site-title">{{ title }}</h1>
+    {%- if theme.custom_logo and (theme.scheme === 'Gemini' or theme.scheme === 'Pisces') %}
+      <img class="custom-logo-image" src="{{ url_for(theme.custom_logo) }}" alt="{{ title }}">
+    {%- endif %}
       <i class="logo-line"></i>
     </a>
     {%- if subtitle %}
       <p class="site-subtitle" itemprop="description">{{ subtitle }}</p>
     {%- endif %}
-    {%- if theme.custom_logo and (theme.scheme === 'Gemini' or theme.scheme === 'Pisces') %}
-      <img class="custom-logo-image" src="{{ url_for(theme.custom_logo) }}" alt="{{ title }}">
-    {%- endif %}
+    
   </div>
 
   <div class="site-nav-right">

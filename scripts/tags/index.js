@@ -17,6 +17,11 @@ const centerQuote = require('./center-quote')(hexo);
 hexo.extend.tag.register('centerquote', centerQuote, true);
 hexo.extend.tag.register('cq', centerQuote, true);
 
+const centerQuoteCus = require('./center-quote-cus')(hexo);
+
+hexo.extend.tag.register('centerquotecus', centerQuoteCus, true);
+hexo.extend.tag.register('cqcus', centerQuoteCus, true);
+
 const groupPicture = require('./group-pictures')(hexo);
 
 hexo.extend.tag.register('grouppicture', groupPicture, true);
